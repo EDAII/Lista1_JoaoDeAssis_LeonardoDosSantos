@@ -24,7 +24,7 @@ class List{
 	   } 
 	   struct Node* current = head;
 	   while(current!=NULL) {
-		  if(current->data == data) { //caso encontre o dado, aumentar o numero de vezes 
+		  if(current->data == data) { //caso encontre o dado, aumentar o numero de vezes que foi feita a busca
 			 current->nSearch +=1;
 			 return true;
 		  }
@@ -37,7 +37,7 @@ class List{
 		return false;
 	}
 
-	void push(string newdata) { 
+	void push(string newdata) { //adiciona para o começo da lista
 		struct Node* newnode = (struct Node*) malloc(sizeof(struct Node)); 
 		newnode->data  = newdata; 
 		newnode->prev = NULL; 
@@ -45,7 +45,7 @@ class List{
 		if(head !=  NULL) head->prev = newnode;     
 		head = newnode; 
 	}
-	void print(){
+	void print(){ //lista todos os componentes
 		struct Node* aux;
 		aux = head;
 		while(aux!=NULL){
